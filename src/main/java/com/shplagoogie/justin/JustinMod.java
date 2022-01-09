@@ -1,5 +1,6 @@
 package com.shplagoogie.justin;
 
+import com.shplagoogie.justin.block.ModBlocks;
 import com.shplagoogie.justin.item.ModItems;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -32,6 +33,7 @@ public class JustinMod
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
 
         eventBus.addListener(this::setup);
 

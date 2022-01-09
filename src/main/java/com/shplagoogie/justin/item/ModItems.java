@@ -16,6 +16,8 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistryObject<Item> JUSTINITE_NUGGET = ITEMS.register("justinite_nugget",
             () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> RAW_JUSTINITE = ITEMS.register("raw_justinite",
+            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
 
     public static void register(IEventBus eventBus) {
