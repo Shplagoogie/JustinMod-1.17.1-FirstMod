@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "justin:justinite_block"
+    }
+  ],
+  "result": {
+    "item": "justin:justinite_ingot",
+    "count": 9
+  }
+}

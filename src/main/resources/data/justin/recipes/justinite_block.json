@@ -1,0 +1,16 @@
+{
+  "type" : "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "justin:justinite_ingot"
+}
+  },
+  "result": {
+    "item": "justin:justinite_block"
+  }
+}

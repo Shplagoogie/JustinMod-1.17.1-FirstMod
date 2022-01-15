@@ -13,11 +13,13 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, JustinMod.MOD_ID);
 
     public static final RegistryObject<Item> JUSTINITE_INGOT = ITEMS.register("justinite_ingot",
-            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.JUSTIN_TAB)));
+
     public static final RegistryObject<Item> JUSTINITE_NUGGET = ITEMS.register("justinite_nugget",
-            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.JUSTIN_TAB)));
+
     public static final RegistryObject<Item> RAW_JUSTINITE = ITEMS.register("raw_justinite",
-            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.JUSTIN_TAB)));
 
 
     public static void register(IEventBus eventBus) {

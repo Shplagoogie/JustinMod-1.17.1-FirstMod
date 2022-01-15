@@ -1,6 +1,7 @@
 package com.shplagoogie.justin.block;
 
 import com.shplagoogie.justin.JustinMod;
+import com.shplagoogie.justin.item.ModCreativeModeTab;
 import com.shplagoogie.justin.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -21,7 +22,20 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> JUSTINITE_BLOCK = registerBlock("justinite_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(15f)));
+    public static final RegistryObject<Block> JUSTINITE_ORE = registerBlock("justinite_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(4f)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
+    private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn, tab);
+        return toReturn;
+    }
+
+    private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
+                new Item.Properties().tab(tab)));
+
+    }
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
@@ -30,9 +44,11 @@ public class ModBlocks {
 
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
-                new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+                new Item.Properties().tab(ModCreativeModeTab.JUSTIN_TAB)));
+
     }
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
+
 }
